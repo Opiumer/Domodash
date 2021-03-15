@@ -2,6 +2,7 @@
 <?
 $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a19477861c32cea5c86adc0a9543;
 ?>
+
 <html lang="en" dir="ltr">
   <head>
     <!-- Required meta tags -->
@@ -17,6 +18,7 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
 
     <!-- Bootstrap.min.js CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <!-- jquery.js CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -27,18 +29,23 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
 
     <!-- datatables CDN -->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    
     <!-- CUSTOM SCRIPTS -->
     <script type="text/javascript" src="js/tools.js"></script>
     <script type="text/javascript" src="js/getData.js"></script>
     <script type="text/javascript" src="js/ChartText.js"></script>
     <script type="text/javascript" src="js/UniversalChart.js"></script>
+    <script type="text/javascript" src="js/Dynamicalcards.js"></script>
 
+    </div>
+</div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script> -->
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=
+      ></script>
 
   </head>
 
@@ -106,8 +113,8 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
         </div>
       </nav>
 
-
-
+      
+      
       <!-- PAGE SPECIFIC CONTENT -->
 
       <!-- ECO SYSTEM SYNTHESIS -->
@@ -119,7 +126,7 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
       <div class="col-12 bg-dark mx-1 my-1 w-100 sectionRow">
 
         <button class="btn btn-secondary btnCollapse" type="button" data-toggle="collapse" data-target="#collapsible1" aria-expanded="false" aria-controls="collapsible1"></button>
-
+        
         <p class="sectionName">CUSTOM TITLE</p>
         <!-- control the height of the row below -->
         <form>
@@ -127,7 +134,6 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
             <input type="range" class="form-control-range heightControl"  min="20" max="100" step="5" value="20" id="heightRange0">
           </div>
         </form>
-
       </div>
     </div>
 
@@ -136,24 +142,29 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
       <div class="row">
         <div class="collapse w-100" id="collapsible1">
             <div class="chart-container col-8 bg-dark mx-1 sectionContent1 tileGraphContainer pl-0" >
-
-              <div class="btn-group-vertical btn-group-sm" role="group" aria-label="Basic example" style="height: 100%;">
-                <button type="button" class="btn btn-outline-secondary">-</button>
-                <button type="button" class="btn btn-outline-secondary">E</button>
-                <button type="button" class="btn btn-outline-secondary">D</button>
-                <button type="button" class="btn btn-outline-secondary">L</button>
-              </div>
-
-              <canvas id="ChartGlobTemp">
+             
+                <button type="button" class="btn btn-outline-secondary" id="btnGen" style="height: 100%;" onclick="addCode()">+</button>
+                <div id="cardSlot"></div>
+               <!--
+                            <canvas id="ChartGlobTemp">
+                            -->
+               <!--add cards-->
+            </div>
           </div>
       </div>
 
   <!-- JAVASCRIPT_________________________________________________________ -->
   <!-- local input file, CSV format -->
+<script>
+  function addCode() {
+    document.getElementById("cardSlot").innerHTML +=
+      "<h3>This is the text which has been inserted by JS</h3>";
+  }
+</script>
 
   <script>
     sliderUtility("sectionContent1",'--vh1',"heightRange0");
-  </script>
+  </script>   
 
   <!-- ChartGlobTemp -->
   <script>
@@ -163,7 +174,7 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
     argumentsArrayTest[0]  = 'csv/ZonAnn.Ts+dSST.csv';                          //csvTable
     argumentsArrayTest[1]  = 'line';                                       //chartType
     argumentsArrayTest[2]  = 'ChartGlobTemp';                                //chartId html reference
-    argumentsArrayTest[3]  = 'Potable';                                              //yLabel1
+m⇝    argumentsArrayTest[3]  = 'Potable';                                              //yLabelicamcards1
     argumentsArrayTest[4]  = 'Hot Water';                                                //yLabel2
     argumentsArrayTest[5]  = 'Rain Tank';                                                 //yLabel3
     argumentsArrayTest[6]  = '#17a2b7';                                            //ycolor1
