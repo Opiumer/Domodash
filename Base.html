@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<?
-$url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a19477861c32cea5c86adc0a9543;
-?>
-
 <html lang="en" dir="ltr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-
+    
     <title>DomoDash</title>
 
     <!-- css -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Bootstrap.min.js CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <!-- jquery.js CDN -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    
+    <!-- Bootstrap.js CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
     <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0">
+    </script>
+    
     <!-- datatables CDN -->
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
+    </script>
     
     <!-- CUSTOM SCRIPTS -->
     <script type="text/javascript" src="js/tools.js"></script>
@@ -36,23 +34,12 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
     <script type="text/javascript" src="js/ChartText.js"></script>
     <script type="text/javascript" src="js/UniversalChart.js"></script>
     <script type="text/javascript" src="js/Dynamicalcards.js"></script>
-
-    </div>
-</div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script> -->
     
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=
-      ></script>
-
   </head>
 
 <!--=========================================================================-->
 
-
-  <!-- body -->
+  <!-- BODY -->
   <body>
     <div class="container-fluid text-light">
 
@@ -94,7 +81,7 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
               </a>
             </li>
 
-            <li class="nav-item col-1">
+            <li class="nav-item col-xs-12 col-sm-12 col-md-6 col-lg-3">
 
               <div class="btn-group timeScale text-right" style="">
                 <a class="btn btn-info"      href="#">HOUR</a>
@@ -141,10 +128,10 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
 
       <div class="row">
         <div class="collapse w-100" id="collapsible1">
-            <div class="chart-container col-8 bg-dark mx-1 sectionContent1 tileGraphContainer pl-0" >
+            <div class="chart-container col-8 bg-dark mx-1 sectionContent1 tileGraphContainer pl-0">
              
                 <button type="button" class="btn btn-outline-secondary" id="btnGen" style="height: 100%;" onclick="addCode()">+</button>
-                <div id="cardSlot"></div>
+                
                <!--
                             <canvas id="ChartGlobTemp">
                             -->
@@ -154,56 +141,24 @@ $url=http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}&appid=5285a
       </div>
 
   <!-- JAVASCRIPT_________________________________________________________ -->
-  <!-- local input file, CSV format -->
-<script>
-  function addCode() {
-    document.getElementById("cardSlot").innerHTML +=
-      "<h3>This is the text which has been inserted by JS</h3>";
-  }
-</script>
-
-  <script>
-    sliderUtility("sectionContent1",'--vh1',"heightRange0");
-  </script>   
-
-  <!-- ChartGlobTemp -->
-  <script>
-
-    const argumentsArrayTest = [];
-
-    argumentsArrayTest[0]  = 'csv/ZonAnn.Ts+dSST.csv';                          //csvTable
-    argumentsArrayTest[1]  = 'line';                                       //chartType
-    argumentsArrayTest[2]  = 'ChartGlobTemp';                                //chartId html reference
-m⇝    argumentsArrayTest[3]  = 'Potable';                                              //yLabelicamcards1
-    argumentsArrayTest[4]  = 'Hot Water';                                                //yLabel2
-    argumentsArrayTest[5]  = 'Rain Tank';                                                 //yLabel3
-    argumentsArrayTest[6]  = '#17a2b7';                                            //ycolor1
-    argumentsArrayTest[7]  = '#dc3544';                                            //ycolor2
-    argumentsArrayTest[8]  = '#ffbe46';                                                 //ycolor3
-    argumentsArrayTest[9]  = "TEST";                                        //background text
-    //argumentsArrayTest[10] = 10;                                                    //xAxis min
-    //argumentsArrayTest[11] = 20;                                                  //xAxis max
-    //argumentsArrayTest[12] = 5;                                                   //step
-
-    chartUNIVERSAL(argumentsArrayTest);
-
-    $('#collapsible1').on("shown.bs.collapse",function(){
-      chartUNIVERSAL(argumentsArrayTest);
-      $('#collapsible1').off(); // to remove the binded event after the initial rendering if needed
-    });
-
-    </script>
+  
+    <script>
+      sliderUtility("sectionContent1",'--vh1',"heightRange0");
+    </script>   
     
     <script>
-      var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	        maxZoom: 18, attribution: '[insert correct attribution here!]' });
-      var clouds = L.OWM.clouds({showLegend: false, opacity: 0.5, appId: 'YOUR_OWN_APPID'});
-      var city = L.OWM.current({intervall: 15, lang: 'de'});
-      var map = L.map('map', { center: new L.LatLng(51.5, 10), zoom: 10, layers: [osm] });
-      var baseMaps = { "OSM Standard": osm };
-      var overlayMaps = { "Clouds": clouds, "Cities": city };
-      var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
+      function addCode() {
+        document.getElementById("collapsible1").innerHTML += 
+        "<div class="card">
+          <div class="card-body">
+            This is some text within a card body.
+          </div>
+        </div>";
+        
+      }
     </script>
-
+    
+    
+    
   </body>
 </html>
