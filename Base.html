@@ -44,9 +44,12 @@
     <div class="container-fluid text-light">
 
       <!-- NAVBAR -->
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand active col-xs-6 col-sm-6 col-md-2 col-lg-1" href="index.html">DOMODash <span class="sr-only">(current)</span></a>
-        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav col-xs-6 col-sm-6 col-md-4 col-lg-2">
             <li class="nav-item">
               <a class="nav-link" href="energy.html">
@@ -78,7 +81,7 @@
               </a>
             </li>
 
-            <li class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
+            <li class="nav-item col-xs-12 col-sm-12 col-md-6 col-lg-5">
 
               <div class="btn-group timeScale text-right" style="">
                 <a class="btn btn-info"      href="#">HOUR</a>
@@ -90,9 +93,9 @@
               </div>
             </li>
           </ul>
-        
+        </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" id="CurrentDate">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 text-lg-right" id="CurrentDate">
           <script type="text/javascript" > document.write(Date());</script>
         </div>
       </nav>
